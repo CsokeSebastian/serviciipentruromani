@@ -80,10 +80,10 @@ nav{display:flex;align-items:center;gap:4px;}
 .s-field.s-wide{flex:2;}
 .s-field.s-narrow{flex:0 0 110px;}
 .s-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--gray-500);white-space:nowrap;}
-.s-input{border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:0.88rem;font-family:inherit;color:var(--gray-900);background:white;outline:none;transition:border-color 0.15s;width:100%;height:42px;box-sizing:border-box;line-height:42px;}
+.s-input{border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:0.88rem;font-family:inherit;color:var(--gray-900);background:white;outline:none;transition:border-color 0.15s;width:100%;height:42px;box-sizing:border-box;}
 .s-input:focus{border-color:var(--blue);}
-select.s-input{padding-right:36px;line-height:normal;}
-input.s-input{line-height:42px;}
+
+
 .search-btn{background:var(--blue);color:white;border:none;border-radius:8px;padding:0 22px;font-size:0.93rem;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.15s;white-space:nowrap;height:42px;flex-shrink:0;align-self:flex-end;}
 .search-btn:hover{background:var(--blue-dark);}
 
@@ -128,8 +128,8 @@ input.s-input{line-height:42px;}
 /* ── FILTER BAR ── */
 .filter-bar{background:white;border-bottom:1.5px solid var(--gray-200);padding:12px 24px;position:sticky;top:64px;z-index:100;}
 .filter-inner{max-width:1140px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
-.filter-select{border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;font-size:0.85rem;font-family:inherit;color:var(--gray-700);background:white;outline:none;cursor:pointer;}
-.filter-select:focus{border-color:var(--blue);}
+.filter-
+.filter-
 .filter-search{border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;font-size:0.85rem;font-family:inherit;color:var(--gray-700);background:white;outline:none;min-width:180px;}
 .filter-search:focus{border-color:var(--blue);}
 .filter-reset{background:none;border:none;color:var(--gray-400);font-size:0.82rem;cursor:pointer;font-family:inherit;padding:6px 8px;}
@@ -173,7 +173,7 @@ input.s-input{line-height:42px;}
 .review-text{font-size:0.88rem;color:var(--gray-600);line-height:1.5;}
 .review-form{background:var(--blue-light);border:1.5px solid #bfdbfe;border-radius:var(--radius);padding:20px;}
 .review-form h4{font-size:0.95rem;font-weight:700;margin-bottom:14px;color:var(--blue);}
-.star-select{display:flex;gap:6px;margin-bottom:14px;}
+.star-
 .star-btn{background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--gray-300);transition:color 0.1s;line-height:1;}
 .star-btn.active,.star-btn:hover{color:#f59e0b;}
 .no-reviews{color:var(--gray-400);font-size:0.88rem;font-style:italic;margin-bottom:12px;}
@@ -186,7 +186,7 @@ input.s-input{line-height:42px;}
 .form-group{margin-bottom:16px;}
 .form-group label{display:block;font-size:0.83rem;font-weight:700;color:var(--gray-700);margin-bottom:6px;}
 .form-group input,.form-group select,.form-group textarea{width:100%;border:1.5px solid var(--gray-200);border-radius:8px;padding:10px 14px;font-size:0.93rem;font-family:inherit;color:var(--gray-900);background:white;outline:none;transition:border-color 0.15s;}
-.form-group select{padding-right:40px;height:46px;}
+
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);}
 .form-group textarea{min-height:100px;resize:vertical;}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
@@ -287,12 +287,21 @@ footer a:hover{color:white;}
 .legal-wrap ul{padding-left:20px;}
 
 /* ── RESPONSIVE ── */
+@media(max-width:600px){
+  .hero{padding:36px 16px 48px;}
+  .hero h1{font-size:1.45rem;letter-spacing:-0.01em;}
+  .hero p{font-size:0.9rem;margin-bottom:24px;}
+  .search-wrap{padding:14px;border-radius:12px;}
+  .search-row{flex-direction:column;gap:8px;}
+  .s-field,.s-field.s-wide,.s-field.s-narrow{flex:1 1 100%;width:100%;}
+  .s-input{border:1.5px solid var(--gray-200);border-radius:8px;padding:0 12px;font-size:0.88rem;font-family:inherit;color:var(--gray-900);background:white;outline:none;transition:border-color 0.15s;width:100%;height:42px;box-sizing:border-box;}
+  
+  .search-btn{width:100%;height:46px;font-size:1rem;margin-top:4px;}
+  .s-label{font-size:0.7rem;}
+}
 @media(max-width:768px){
   .hero h1{font-size:1.7rem;}
   .hero p{font-size:0.95rem;}
-  .search-row{grid-template-columns:1fr 1fr;}
-  .search-row-2{grid-template-columns:1fr;}
-  .search-btn{width:100%;}
   .cats-grid{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));}
   .footer-inner{grid-template-columns:1fr;gap:28px;}
   .detail-header{padding:20px;}
@@ -305,6 +314,50 @@ footer a:hover{color:white;}
 }
 @media(max-width:480px){
   .search-row{grid-template-columns:1fr;}
+}
+
+/* ══ CLEAN SELECT STYLES ══ */
+select{
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  appearance:none;
+  background-color:white;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1.5l6 6 6-6' stroke='%236b7280' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 12px center;
+  padding-right:36px !important;
+  cursor:pointer;
+  font-family:inherit;
+  border:1.5px solid var(--gray-200);
+  border-radius:8px;
+  color:var(--gray-900);
+  outline:none;
+  transition:border-color 0.15s;
+}
+select:focus{border-color:var(--blue);}
+
+/* Search bar dropdowns */
+select.s-input{
+  height:42px;
+  font-size:0.88rem;
+  padding-left:12px;
+  width:100%;
+}
+
+/* Filter bar dropdown */
+.filter-select{
+  height:38px;
+  font-size:0.85rem;
+  padding-left:12px;
+  color:var(--gray-700);
+}
+
+/* Form dropdowns (admin modal, recommend form) */
+.form-group select{
+  height:46px;
+  font-size:0.93rem;
+  padding-left:14px;
+  width:100%;
 }
 </style>
 </head>
@@ -464,7 +517,7 @@ footer a:hover{color:white;}
         <textarea id="c-message" placeholder="Scrie mesajul tău aici..."></textarea>
       </div>
       <div class="error-msg" id="c-error" style="display:none;margin-bottom:8px;"></div>
-      <button class="btn btn-primary btn-full btn-lg" onclick="submitContact()">Trimite mesajul</button>
+      <button class="btn btn-primary btn-full btn-lg" id="c-submit-btn" onclick="submitContact()">Trimite mesajul</button>
     </div>
   </div>
 </div>
@@ -507,7 +560,7 @@ footer a:hover{color:white;}
         ℹ️ Recomandarea ta va fi analizată de echipa noastră înainte de publicare. Mulțumim!
       </div>
       <div class="error-msg" id="r-error" style="display:none;margin-bottom:8px;"></div>
-      <button class="btn btn-primary btn-full btn-lg" onclick="submitRecommend()">Trimite recomandarea</button>
+      <button class="btn btn-primary btn-full btn-lg" id="r-submit-btn" onclick="submitRecommend()">Trimite recomandarea</button>
     </div>
   </div>
 </div>
@@ -1129,22 +1182,46 @@ function resetContactForm(){
   if(ss)ss.remove();
 }
 
-function submitContact(){
-  const name=document.getElementById("c-name").value.trim();
-  const email=document.getElementById("c-email").value.trim();
-  const msg=document.getElementById("c-message").value.trim();
-  const err=document.getElementById("c-error");
+async function submitContact(){
+  const name    = document.getElementById("c-name").value.trim();
+  const email   = document.getElementById("c-email").value.trim();
+  const subject = document.getElementById("c-subject").value.trim();
+  const msg     = document.getElementById("c-message").value.trim();
+  const err     = document.getElementById("c-error");
   if(!name||!email||!msg){err.textContent="Te rugăm completează câmpurile obligatorii (Nume, Email, Mesaj).";err.style.display="block";return;}
   if(!email.includes("@")){err.textContent="Adresa de email nu este validă.";err.style.display="block";return;}
   err.style.display="none";
-  messages.push({id:uid(),type:"contact",name,email,subject:document.getElementById("c-subject").value.trim(),msg,ts:Date.now(),read:false});
-  save();
-  document.getElementById("contact-form-wrap").innerHTML=`<div class="success-state">
-    <div class="s-icon">✅</div>
-    <h3>Mesaj trimis!</h3>
-    <p>Îți mulțumim că ne-ai contactat. Îți vom răspunde cât mai curând posibil.</p>
-    <button class="btn btn-primary" onclick="showPage('home')">Înapoi la pagina principală</button>
-  </div>`;
+  const btn=document.getElementById("c-submit-btn");
+  if(btn){btn.textContent="Se trimite...";btn.disabled=true;}
+  try{
+    const res=await fetch("https://api.web3forms.com/submit",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({
+        access_key:"0245d2ea-7dd6-4436-b7e3-0c65594970a7",
+        name,email,
+        subject:subject||"Mesaj nou - ServiciiPentruRomâni",
+        message:msg,
+        from_name:"ServiciiPentruRomâni.com"
+      })
+    });
+    const data=await res.json();
+    if(data.success){
+      messages.push({id:uid(),type:"contact",name,email,subject,msg,ts:Date.now(),read:false});
+      save();
+      document.getElementById("contact-form-wrap").innerHTML=`<div class="success-state">
+        <div class="s-icon">✅</div><h3>Mesaj trimis!</h3>
+        <p>Mulțumim că ne-ai contactat. Îți vom răspunde cât mai curând.</p>
+        <button class="btn btn-primary" onclick="showPage('home')">Înapoi la pagina principală</button>
+      </div>`;
+    }else{
+      err.textContent="A apărut o eroare. Te rugăm încearcă din nou.";err.style.display="block";
+      if(btn){btn.textContent="Trimite mesajul";btn.disabled=false;}
+    }
+  }catch(e){
+    err.textContent="Eroare de conexiune. Verifică internetul și încearcă din nou.";err.style.display="block";
+    if(btn){btn.textContent="Trimite mesajul";btn.disabled=false;}
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -1162,27 +1239,54 @@ function resetRecForm(){
   });
 }
 
-function submitRecommend(){
-  const name=document.getElementById("r-name").value.trim();
-  const catVal=document.getElementById("r-cat").value;
-  const city=document.getElementById("r-city").value.trim();
-  const err=document.getElementById("r-error");
+async function submitRecommend(){
+  const name    = document.getElementById("r-name").value.trim();
+  const catVal  = document.getElementById("r-cat").value;
+  const city    = document.getElementById("r-city").value.trim();
+  const phone   = document.getElementById("r-phone").value.trim();
+  const website = document.getElementById("r-website").value.trim();
+  const desc    = document.getElementById("r-desc").value.trim();
+  const err     = document.getElementById("r-error");
   if(!name||!catVal||!city){err.textContent="Te rugăm completează câmpurile obligatorii: Nume, Categorie, Oraș.";err.style.display="block";return;}
   err.style.display="none";
-  recommendations.push({
-    id:uid(),name,category:catVal,city,
-    phone:document.getElementById("r-phone").value.trim(),
-    website:document.getElementById("r-website").value.trim(),
-    desc:document.getElementById("r-desc").value.trim(),
-    ts:Date.now(),read:false
-  });
-  save();
-  document.getElementById("rec-form-wrap").innerHTML=`<div class="success-state">
-    <div class="s-icon">⭐</div>
-    <h3>Recomandare trimisă!</h3>
-    <p>Mulțumim pentru recomandare! O vom analiza și vom adăuga afacerea dacă îndeplinește criteriile noastre.</p>
-    <button class="btn btn-primary" onclick="showPage('home')">Înapoi la pagina principală</button>
-  </div>`;
+  const btn=document.getElementById("r-submit-btn");
+  if(btn){btn.textContent="Se trimite...";btn.disabled=true;}
+  const msgBody=`Afacere recomandată: ${name}
+Categorie: ${catVal}
+Oraș: ${city}
+Telefon: ${phone||"—"}
+Website: ${website||"—"}
+Descriere: ${desc||"—"}`;
+  try{
+    const res=await fetch("https://api.web3forms.com/submit",{
+      method:"POST",
+      headers:{"Content-Type":"application/json","Accept":"application/json"},
+      body:JSON.stringify({
+        access_key:"0245d2ea-7dd6-4436-b7e3-0c65594970a7",
+        name:"Recomandare: "+name,
+        email:"noreply@serviciipentruromani.com",
+        subject:"⭐ Recomandare afacere nouă: "+name,
+        message:msgBody,
+        from_name:"ServiciiPentruRomâni.com"
+      })
+    });
+    const data=await res.json();
+    if(data.success){
+      recommendations.push({id:uid(),name,category:catVal,city,phone,website,desc,ts:Date.now(),read:false});
+      save();
+      document.getElementById("rec-form-wrap").innerHTML=`<div class="success-state">
+        <div class="s-icon">⭐</div><h3>Recomandare trimisă!</h3>
+        <p>Mulțumim! O vom analiza și, dacă îndeplinește criteriile, o vom adăuga în director.</p>
+        <button class="btn btn-primary" onclick="showPage('home')">Înapoi la pagina principală</button>
+      </div>`;
+    }else{
+      err.textContent="A apărut o eroare. Te rugăm încearcă din nou.";err.style.display="block";
+      if(btn){btn.textContent="Trimite recomandarea";btn.disabled=false;}
+    }
+  }catch(e){
+    err.textContent="Eroare de conexiune. Verifică internetul și încearcă din nou.";err.style.display="block";
+    if(btn){btn.textContent="Trimite recomandarea";btn.disabled=false;}
+  }
 }
 
 // ═══════════════════════════════════════════════════════════
