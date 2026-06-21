@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ148RR06V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FZ148RR06V');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servicii Pentru Români în Germania</title>
@@ -126,12 +134,8 @@ nav{display:flex;align-items:center;gap:4px;}
 .stars span{color:var(--gray-600);font-size:0.78rem;}
 
 /* ── FILTER BAR ── */
-.filter-bar{background:white;border-bottom:1.5px solid var(--gray-200);padding:12px 24px;position:sticky;top:64px;z-index:100;}
+.filter-bar{background:var(--gray-50);border-bottom:1.5px solid var(--gray-200);padding:20px 24px;}
 .filter-inner{max-width:1140px;margin:0 auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
-.filter-
-.filter-
-.filter-search{border:1.5px solid var(--gray-200);border-radius:8px;padding:8px 12px;font-size:0.85rem;font-family:inherit;color:var(--gray-700);background:white;outline:none;min-width:180px;}
-.filter-search:focus{border-color:var(--blue);}
 .filter-reset{background:none;border:none;color:var(--gray-400);font-size:0.82rem;cursor:pointer;font-family:inherit;padding:6px 8px;}
 .filter-reset:hover{color:var(--gray-700);}
 .results-info{margin-left:auto;font-size:0.82rem;color:var(--gray-500);}
@@ -288,6 +292,8 @@ footer a:hover{color:white;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:600px){
+  .filter-bar{padding:14px 16px;}
+  .filter-inner .search-wrap{padding:14px;}
   .hero{padding:36px 16px 48px;}
   .hero h1{font-size:1.45rem;letter-spacing:-0.01em;}
   .hero p{font-size:0.9rem;margin-bottom:24px;}
@@ -472,11 +478,30 @@ select.s-input{
 <div class="page" id="page-results">
   <div class="filter-bar">
     <div class="filter-inner">
-      <input class="filter-search" id="f-text" type="text" placeholder="🔍 Caută..." oninput="renderResults()">
-      <select class="filter-select" id="f-cat" onchange="renderResults()"><option value="">Toate categoriile</option></select>
-      <input class="filter-search" id="f-city" type="text" placeholder="Oraș" style="min-width:120px;" oninput="renderResults()">
-      <input class="filter-search" id="f-zip" type="text" placeholder="Cod poștal" style="min-width:110px;" oninput="renderResults()">
-      <button class="filter-reset" onclick="resetSearch()">✕ Resetează</button>
+      <div class="search-wrap" style="box-shadow:none;border:1.5px solid var(--gray-200);padding:14px 16px;max-width:none;margin:0;flex:1;">
+        <div class="search-row">
+          <div class="s-field s-wide">
+            <div class="s-label">Caută serviciu sau firmă</div>
+            <input class="s-input" id="f-text" type="text" placeholder="ex: avocat, construcții, Ionescu..." oninput="renderResults()">
+          </div>
+          <div class="s-field">
+            <div class="s-label">Categorie</div>
+            <select class="s-input" id="f-cat" onchange="renderResults()"><option value="">Toate categoriile</option></select>
+          </div>
+          <div class="s-field">
+            <div class="s-label">Oraș</div>
+            <input class="s-input" id="f-city" type="text" placeholder="ex: Berlin" oninput="renderResults()">
+          </div>
+          <div class="s-field s-narrow">
+            <div class="s-label">Cod poștal</div>
+            <input class="s-input" id="f-zip" type="text" placeholder="10115" oninput="renderResults()">
+          </div>
+          <button class="search-btn" onclick="renderResults()">🔍 Caută</button>
+        </div>
+      </div>
+    </div>
+    <div class="filter-inner" style="margin-top:8px;">
+      <button class="filter-reset" onclick="resetSearch()">✕ Resetează filtrele</button>
       <div class="results-info" id="results-info"></div>
     </div>
   </div>
